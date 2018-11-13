@@ -1,14 +1,46 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: cornsilk;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.add-note {
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
 }
+
+.notes {
+  margin: 0.5em;
+  padding-left: 0;
+  max-width: 10em;
+  list-style: none;
+}
+
+.note {
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 0.3em 0.03em rgba(0, 0, 0, 0.3);
+}
+
+  .note:hover {
+    box-shadow: 0 0 0.3em 0.03em rgba(0, 0, 0, 0.7);
+    transition: 0.6s;
+  }
+
+  .note .task {
+    /* force to use inline-block so that it gets minimum height */
+    display: inline-block;
+  }
+
+  .note .delete-note {
+    float: right;
+    padding: 0;
+    background-color: #fdfdfd;
+    border: none;
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+  .note:hover .delete-note {
+    visibility: visible;
+  }
