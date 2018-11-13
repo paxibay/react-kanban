@@ -4,6 +4,12 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
+import alt from './libs/alt';
+import storage from './libs/storage';
+import persist from './libs/persist';
+
+persist(alt, storage, 'app');
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
