@@ -28,10 +28,21 @@ export default class App extends React.Component {
     return (
       <div>
         <button onClick={this.addNote}>+</button>
-        <Notes notes={notes} onEdit={this.editNote} />
+        <Notes notes={notes}
+          onEdit={this.editNote}
+          onDelete={this.deleteNote} />
       </div>
     );
   }
+
+  deleteNote = (id, e) => {
+    // Avoid bubbling to edit
+    e.stopPropagation();
+    this.setState({
+      notes: this.state.notes.filter(note => note.id !== id)
+    });
+  };
+
 
   // this.setState accepts a second parameter like this: 
   // this.setState({ ...}, () => console.log('set state!')).
